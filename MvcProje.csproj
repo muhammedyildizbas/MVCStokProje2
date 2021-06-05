@@ -226,6 +226,7 @@
     <Content Include="Views\Musteriler\Index.cshtml" />
     <Content Include="Views\Kategori\YeniKategori.cshtml" />
     <Content Include="Views\Musteriler\YeniMusteri.cshtml" />
+    <Content Include="Views\Urun\UrunEkle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

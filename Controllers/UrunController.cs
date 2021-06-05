@@ -15,7 +15,20 @@ namespace MvcProje.Controllers
         {
             var degerler = db.TBLURUNLERs.ToList();
             return View(degerler);
+           
+        }
+        [HttpGet]
+        public ActionResult UrunEkle()
+        {
             return View();
         }
+        [HttpPost]
+        public ActionResult UrunEkle(TBLURUNLER p1)
+        {
+            db.TBLURUNLERs.Add(p1);
+            db.SaveChanges();
+            return View();
+        }
+
     }
 }
