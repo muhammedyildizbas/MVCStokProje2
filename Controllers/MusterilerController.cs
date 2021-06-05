@@ -5,29 +5,29 @@ using System.Web;
 using System.Web.Mvc;
 using MvcProje.Models.Entity;
 
+
 namespace MvcProje.Controllers
 {
-    public class KategoriController : Controller
+    public class MusterilerController : Controller
     {
-        // GET: Kategori
+        // GET: Musteriler
         MvcDbStokEntities db = new MvcDbStokEntities();
 
         public ActionResult Index()
         {
-            var degerler = db.TBLKATEGORILERs.ToList();
+
+            var degerler = db.TBLMUSTERILERs.ToList(); 
             return View(degerler);
         }
-        //sayfa yüklenirken yapması gerekenleri belirler
-        [HttpGet] 
-        public ActionResult YeniKategori()
+        [HttpGet]
+        public ActionResult YeniMusteri()
         {
             return View();
         }
-        // sayfada bir işlem yapıldığı zaman devreye girer
-        [HttpPost] 
-        public ActionResult YeniKategori(TBLKATEGORILER p1)
+        [HttpPost]
+        public ActionResult YeniMusteri(TBLMUSTERILER p1)
         {
-            db.TBLKATEGORILERs.Add(p1);
+            db.TBLMUSTERILERs.Add(p1);
             db.SaveChanges();
             return View();
 
