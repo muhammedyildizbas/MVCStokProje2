@@ -17,13 +17,14 @@ namespace MvcProje.Controllers
             var degerler = db.TBLKATEGORILERs.ToList();
             return View(degerler);
         }
-        [HttpGet] //sayfa yüklenirken yapması gerekenleri belirler
+        //sayfa yüklenirken yapması gerekenleri belirler
+        [HttpGet] 
         public ActionResult YeniKategori()
         {
             return View();
         }
-
-        [HttpPost] // sayfada bir işlem yapıldığı zaman devreye girer
+        // sayfada bir işlem yapıldığı zaman devreye girer
+        [HttpPost] 
         public ActionResult YeniKategori(TBLKATEGORILER p1)
         {
             db.TBLKATEGORILERs.Add(p1);
