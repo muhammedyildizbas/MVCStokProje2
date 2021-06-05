@@ -19,5 +19,18 @@ namespace MvcProje.Controllers
             var degerler = db.TBLMUSTERILERs.ToList(); 
             return View(degerler);
         }
+        [HttpGet]
+        public ActionResult YeniMusteri()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult YeniMusteri(TBLMUSTERILER p1)
+        {
+            db.TBLMUSTERILERs.Add(p1);
+            db.SaveChanges();
+            return View();
+
+        }
     }
 }
