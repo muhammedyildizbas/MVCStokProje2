@@ -11,7 +11,8 @@ namespace MvcProje.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class TBLMUSTERILER
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,7 +22,11 @@ namespace MvcProje.Models.Entity
         }
     
         public int MUSTERIID { get; set; }
+        [Required(ErrorMessage = "Müþteri Adýný Giriniz")]
+        [StringLength(50,ErrorMessage ="50 Karakterden Fazla Girilemez!")]
         public string MUSTERIAD { get; set; }
+        [Required(ErrorMessage = "Müþteri Soyadýný Giriniz")]
+        [StringLength(50, ErrorMessage = "50 Karakterden Fazla Girilemez!")]
         public string MUSTERISOYAD { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
