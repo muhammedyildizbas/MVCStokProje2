@@ -81,3 +81,7 @@ C:\Users\Muhammed\source\repos\MvcProje\MvcProje\bin\EntityFramework.dll
 C:\Users\Muhammed\source\repos\MvcProje\MvcProje\bin\EntityFramework.SqlServer.dll
 C:\Users\Muhammed\source\repos\MvcProje\MvcProje\bin\EntityFramework.xml
 C:\Users\Muhammed\source\repos\MvcProje\MvcProje\bin\EntityFramework.SqlServer.xml
+C:\Users\Muhammed\source\repos\MvcProje\MvcProje\bin\PagedList.dll
+C:\Users\Muhammed\source\repos\MvcProje\MvcProje\bin\PagedList.Mvc.dll
+C:\Users\Muhammed\source\repos\MvcProje\MvcProje\bin\PagedList.xml
+C:\Users\Muhammed\source\repos\MvcProje\MvcProje\bin\PagedList.Mvc.xml
