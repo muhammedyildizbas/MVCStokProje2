@@ -27,6 +27,10 @@ namespace MvcProje.Controllers
         [HttpPost] 
         public ActionResult YeniKategori(TBLKATEGORILER p1)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("YeniKategori");
+            }
             db.TBLKATEGORILERs.Add(p1);
             db.SaveChanges();
             return View();

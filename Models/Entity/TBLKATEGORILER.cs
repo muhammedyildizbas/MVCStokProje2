@@ -22,7 +22,7 @@ namespace MvcProje.Models.Entity
         }
     
         public short KATEGORIID { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Kategori Adýný Giriniz")]
         public string KATEGORIAD { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
