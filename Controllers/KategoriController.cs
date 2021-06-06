@@ -44,5 +44,12 @@ namespace MvcProje.Controllers
             var ktgr = db.TBLKATEGORILERs.Find(id);
             return View("KategoriGetir", ktgr);
         }
+        public ActionResult Guncelle(TBLKATEGORILER p1)
+        {
+            var ktg = db.TBLKATEGORILERs.Find(p1.KATEGORIID);
+            ktg.KATEGORIAD = p1.KATEGORIAD;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
