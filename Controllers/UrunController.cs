@@ -49,6 +49,15 @@ namespace MvcProje.Controllers
         public ActionResult UrunGetir(int id)
         {
             var urun = db.TBLURUNLERs.Find(id);
+
+            List<SelectListItem> degerler = (from i in db.TBLKATEGORILERs.ToList()
+                                             select new SelectListItem
+                                             {
+                                                 Text = i.KATEGORIAD,
+                                                 Value = i.KATEGORIID.ToString()
+                                             }).ToList();
+            ViewBag.dgr = degerler;
+           
             return View("UrunGetir", urun);
         }
     }
