@@ -27,6 +27,10 @@ namespace MvcProje.Controllers
         [HttpPost]
         public ActionResult YeniMusteri(TBLMUSTERILER p1)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("YeniMusteri");
+            }
             db.TBLMUSTERILERs.Add(p1);
             db.SaveChanges();
             return View();
