@@ -60,5 +60,17 @@ namespace MvcProje.Controllers
            
             return View("UrunGetir", urun);
         }
+        public ActionResult Guncelle(TBLURUNLER p)
+        {
+            var urun = db.TBLURUNLERs.Find(p.URUNID);
+            urun.URUNAD = p.URUNAD;
+            urun.MARKA = p.MARKA;
+            urun.STOK = p.STOK;
+            //  urun.URUNKATEGORİ = p.URUNKATEGORİ;
+            var ktg = db.TBLKATEGORILERs.Where(m => m.KATEGORIID == p.TBLKATEGORILER.KATEGORIID).FirstOrDefault();
+            urun.URUNKATEGORİ = ktg.KATEGORIID;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
