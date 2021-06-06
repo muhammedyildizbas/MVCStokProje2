@@ -32,9 +32,12 @@ namespace MvcProje.Controllers
         [HttpPost]
         public ActionResult UrunEkle(TBLURUNLER p1)
         {
+            var ktg = db.TBLKATEGORILERs.Where(m => m.KATEGORIID == p1.TBLKATEGORILER.KATEGORIID).FirstOrDefault();
+            p1.TBLKATEGORILER = ktg;
+
             db.TBLURUNLERs.Add(p1);
             db.SaveChanges();
-            return View();
+            return RedirectToAction("Index");
         }
 
     }
