@@ -20,6 +20,13 @@ namespace MvcProje.Controllers
         [HttpGet]
         public ActionResult UrunEkle()
         {
+            List<SelectListItem> degerler = (from i in db.TBLKATEGORILERs.ToList()
+                                             select new SelectListItem
+                                             {
+                                                 Text = i.KATEGORIAD,
+                                                 Value = i.KATEGORIID.ToString()
+                                             }).ToList();
+            ViewBag.dgr = degerler;
             return View();
         }
         [HttpPost]
