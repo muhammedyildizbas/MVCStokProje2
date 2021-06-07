@@ -13,11 +13,17 @@ namespace MvcProje.Controllers
         // GET: Musteriler
         MvcDbStokEntities db = new MvcDbStokEntities();
 
-        public ActionResult Index()
+        public ActionResult Index(string p)
         {
+            var degerler = from d in db.TBLMUSTERILERs select d;
+            if (!string.IsNullOrEmpty(p))
+            {
+                degerler = degerler.Where(m => m.MUSTERIAD.Contains(p));
+            }
+            return View(degerler.ToList());
 
-            var degerler = db.TBLMUSTERILERs.ToList(); 
-            return View(degerler);
+            //var degerler = db.TBLMUSTERILERs.ToList(); 
+            //return View(degerler);
         }
         [HttpGet]
         public ActionResult YeniMusteri()
