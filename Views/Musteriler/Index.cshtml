@@ -4,17 +4,27 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
+@using (Html.BeginForm("Index", "Musteriler", FormMethod.Get))
+            {
+                <p>
+                    <b> Aranacak Müşteri Adı: </b> @Html.TextBox("p")
+                    <input  type="submit" value="Ara"/>
 
-<table class="table table-bordered">
-    <tr>
-        <th>MÜŞTERİ ID</th>
-        <th>MÜŞTERİ ADI</th>
-        <th>MÜŞTERİ SOYADI</th>
-        <th>SİL</th>
-        <th>GÜNCELLE</th>
-        <th>ALERT</th>
+                </p>
+            }
 
-    </tr>
+<table  class="table table-bordered">
+  
+        <tr>
+            <th>MÜŞTERİ ID</th>
+            <th>MÜŞTERİ ADI</th>
+            <th>MÜŞTERİ SOYADI</th>
+            <th>SİL</th>
+            <th>GÜNCELLE</th>
+            <th>ALERT</th>
+
+        </tr>
+  
     <tbody>
         @foreach (var musteri in Model)
         {

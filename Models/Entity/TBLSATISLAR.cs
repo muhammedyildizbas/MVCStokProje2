@@ -11,11 +11,14 @@ namespace MvcProje.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class TBLSATISLAR
     {
         public int SATISID { get; set; }
+        
         public Nullable<int> URUN { get; set; }
+        
         public Nullable<int> MUSTERI { get; set; }
         public Nullable<byte> ADET { get; set; }
         public Nullable<decimal> FIYAT { get; set; }
